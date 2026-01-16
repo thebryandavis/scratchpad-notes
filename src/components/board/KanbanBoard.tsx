@@ -188,6 +188,7 @@ export function KanbanBoard({ onNotesCountChange }: KanbanBoardProps) {
     handleDragEnd,
     notesCount: notes.length,
     canAddNote: notes.length < FREE_NOTE_LIMIT,
+    isDragging: activeNote !== null,
   };
 }
 
