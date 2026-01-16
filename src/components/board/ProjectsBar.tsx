@@ -6,16 +6,15 @@ import { Column } from '@/types';
 interface ProjectsBarProps {
   columns: Column[];
   onColumnsChange?: (columns: Column[]) => void;
-  isDragging?: boolean;
 }
 
-export function ProjectsBar({ columns, onColumnsChange, isDragging = false }: ProjectsBarProps) {
+export function ProjectsBar({ columns, onColumnsChange }: ProjectsBarProps) {
   const [showColumnsDropdown, setShowColumnsDropdown] = useState(false);
   const [isAddingProject, setIsAddingProject] = useState(false);
   const [newProjectName, setNewProjectName] = useState('');
 
   return (
-    <div className={`flex items-center gap-4 px-8 py-4 border-b border-[var(--border)] ${isDragging ? 'pointer-events-none' : ''}`}>
+    <div className="flex items-center gap-4 px-8 py-4 border-b border-[var(--border)]">
       {/* All Notes Button */}
       <button className="flex items-center gap-2 bg-[var(--primary)] text-white px-4 py-2 rounded-xl text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200">
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

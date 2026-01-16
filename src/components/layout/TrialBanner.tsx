@@ -2,12 +2,11 @@
 
 interface TrialBannerProps {
   notesRemaining: number;
-  isDragging?: boolean;
 }
 
-export function TrialBanner({ notesRemaining, isDragging = false }: TrialBannerProps) {
+export function TrialBanner({ notesRemaining }: TrialBannerProps) {
   return (
-    <div className={`bg-[var(--primary-light)] py-2.5 px-4 text-center text-sm ${isDragging ? 'pointer-events-none' : ''}`}>
+    <div className="bg-[var(--primary-light)] py-2.5 px-4 text-center text-sm">
       <span className="text-[var(--text-primary)]">
         <span className="text-[var(--primary)] font-medium">{notesRemaining} notes</span>
         {' '}remaining on free plan

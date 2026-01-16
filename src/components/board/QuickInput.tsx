@@ -5,10 +5,9 @@ import { useState, KeyboardEvent } from 'react';
 interface QuickInputProps {
   onAddNote: (content: string) => void;
   disabled?: boolean;
-  isDragging?: boolean;
 }
 
-export function QuickInput({ onAddNote, disabled, isDragging = false }: QuickInputProps) {
+export function QuickInput({ onAddNote, disabled }: QuickInputProps) {
   const [content, setContent] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
@@ -26,7 +25,7 @@ export function QuickInput({ onAddNote, disabled, isDragging = false }: QuickInp
   };
 
   return (
-    <div className={`flex justify-center px-8 py-6 ${isDragging ? 'pointer-events-none' : ''}`}>
+    <div className="flex justify-center px-8 py-6">
       <div
         className={`flex items-center gap-3 w-full max-w-xl bg-white rounded-2xl border-2 transition-all duration-200 ${
           isFocused

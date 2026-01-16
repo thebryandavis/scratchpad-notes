@@ -2,13 +2,9 @@
 
 import Link from 'next/link';
 
-interface HeaderProps {
-  isDragging?: boolean;
-}
-
-export function Header({ isDragging = false }: HeaderProps) {
+export function Header() {
   return (
-    <header className={`flex items-center justify-between px-8 py-5 ${isDragging ? 'pointer-events-none' : ''}`}>
+    <header className="flex items-center justify-between px-8 py-5">
       <Link href="/" className="flex items-center gap-3 group">
         {/* Pencil/paper icon */}
         <div className="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
