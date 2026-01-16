@@ -17,10 +17,10 @@ export default function Home() {
 
   return (
     <div className="app-container">
-      <TrialBanner notesRemaining={notesRemaining} />
-      <Header />
-      <QuickInput onAddNote={board.addNote} disabled={!board.canAddNote} />
-      <ProjectsBar columns={board.columns} />
+      <TrialBanner notesRemaining={notesRemaining} isDragging={board.isDragging} />
+      <Header isDragging={board.isDragging} />
+      <QuickInput onAddNote={board.addNote} disabled={!board.canAddNote} isDragging={board.isDragging} />
+      <ProjectsBar columns={board.columns} isDragging={board.isDragging} />
       <KanbanBoardView board={board} />
     </div>
   );
